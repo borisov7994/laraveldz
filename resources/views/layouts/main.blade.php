@@ -7,16 +7,10 @@
     @vite(['resources/css/app.css', 'resources/js/app.js'])
     <title>Document</title>
 </head>
-<?php
-$image_url='https://w7.pngwing.com/pngs/4/706/png-transparent-web-development-computer-icons-domain-name-website-text-logo-internet-thumbnail.png';
-?>
+
 <body>
-    <header class="md:mx-auto justify-center items-center">
-        <ul>
-            <img src="<?php echo $image_url;?>" width="100" height="100">
-            <li>Главная</li>
-            <a href="{{route('array')}}"> Массивы</a>
-        </ul>
+    <header class="flex flex-row">    <p>Главная</p>
+            <p><a href="{{route('array')}}"> Массивы</a></p>
     </header>
     <main>
         @yield('content')

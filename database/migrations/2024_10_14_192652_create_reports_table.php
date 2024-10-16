@@ -13,8 +13,9 @@ return new class extends Migration
     {
         Schema::create('reports', function (Blueprint $table) {
             $table->id();
-            $table->integer('number');
-            $table->string('description');
+            $table->string('number');
+            $table->text('description');
+            $table->softDeletes();
             $table->timestamps();
         });
     }
