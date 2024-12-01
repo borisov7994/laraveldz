@@ -18,7 +18,17 @@ public function showArray(){
         'id' => 1, 
         'title' => 'продукт 1',
         'price' => 500, 
-        'path' => 'img/1.jpg'], ];
+        'path' => 'img/1.jpg'],
+        [
+            'id' => 2, 
+            'title' => 'продукт 2',
+            'price' => 1500, 
+            'path' => 'img/1.jpg'],
+            [
+                'id' => 3, 
+                'title' => 'продукт 3',
+                'price' => 2500, 
+                'path' => 'img/1.jpg'] ];
     
         return view('home', compact('array'));
     

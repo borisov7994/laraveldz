@@ -11,12 +11,17 @@ return new class extends Migration
      */
     public function up(): void
     {
+        // Создаем таблицу 'reports'
         Schema::create('reports', function (Blueprint $table) {
-            $table->id();
+            $table->id();  // Создание автоинкрементируемого столбца 'id'
             $table->string('number');
             $table->text('description');
-            $table->softDeletes();
             $table->timestamps();
+            $table->unsignedBigInteger('status_id')->nullable();  // 'status_id' должен быть unsignedBigInteger
+            $table->foreign('status_id')->references('id')->on('statuses')->onDelete('cascade')->nullable();;
+
+            $table->unsignedBigInteger('user_id')->nullable();  // 'status_id' должен быть unsignedBigInteger
+            $table->foreign('user_id')->references('id')->on('users')->onDelete('cascade')->nullable();;
         });
     }
 

@@ -17,14 +17,12 @@ class ReportController extends Controller
     }
     public function store(Request $request, Report $report) {
         $data = $request->validate([
-            'description' => 'nullable|string', // Используйте 'nullable|string'
+        'number' => 'string',
+        'description' => 'string',
         ]);
-        
-        $data['number'] = uniqid();
-        
         $report->create($data);
-        
-        return redirect()->back()->with('success', 'Report created successfully.');
+        return redirect()->back();
+
     }
 
     public function show(Report $report) {
@@ -33,13 +31,11 @@ class ReportController extends Controller
 
     public function update(Request $request, Report $report) {
         $data = $request->validate([
-            'description' => 'nullable|string', // Используйте 'nullable|string'
+        'number' => 'string',
+        'description' => 'string',
         ]);
-        
-        $data['number'] = uniqid();
-        
         $report->update($data);
-        
-        return redirect()->back()->with('success', 'Report created successfully.');
+        return redirect()->back();
+
     }
 }
